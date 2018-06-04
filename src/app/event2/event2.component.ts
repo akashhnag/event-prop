@@ -20,4 +20,8 @@ export class Event2Component implements OnInit {
     
   }
 
+  onEvent(event) {
+    event.stopPropagation();
+ }
+
 }

@@ -2,9 +2,9 @@
   <tr>
     <th *ngFor="let a of head">{{a}}</th>
   </tr>
-  <tr *ngFor="let a of details">
-    <td (click)="action(a)">{{a.name}}</td>
-    <td (click)="action(a.email)">{{a.email}}</td>
-    <td (click)="action(a.age)">{{a.age}}</td>
+  <tr *ngFor="let a of details" (click)="action(a)">
+    <td >{{a.name}}</td>
+    <td >{{a.email}}</td>
+    <td (click)="onEvent($event)" (click)="action(a.age)">{{a.age}}</td>
   </tr>
 </table>
