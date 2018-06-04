@@ -1,16 +1,10 @@
-<Table>
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Colors</th>
-      <th>Email</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td name="name" value="value" (click)="action()" [(ngModel)]="val">Susie</td>
-      <td>Blue, Red</td>
-      <td>susie@hello.com</td>
-    </tr>
-    </tbody>
-  </Table>
+<table>
+  <tr>
+    <th *ngFor="let a of head">{{a}}</th>
+  </tr>
+  <tr *ngFor="let a of details">
+    <td (click)="action(a)">{{a.name}}</td>
+    <td (click)="action(a.email)">{{a.email}}</td>
+    <td (click)="action(a.age)">{{a.age}}</td>
+  </tr>
+</table>

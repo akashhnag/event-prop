@@ -3,7 +3,8 @@
     <li *ngFor="let a of arrs"><input type="checkbox" [(ngModel)]="a.value" (click)="check()">{{a.name}}
       <div *ngIf="a.value && a.name=='second'">
         <li *ngFor="let b of arrs2"><input type="checkbox" [(ngModel)]="b.value">{{b.name}}</li>
-      </div></li>
+      </div>
+    </li>
     
   </ul>
     
