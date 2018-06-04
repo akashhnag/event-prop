@@ -1,0 +1,20 @@
+<div>
+  <ul>
+    <li *ngFor="let a of arrs"><input type="checkbox" [(ngModel)]="a.value" (click)="check()">{{a.name}}
+      <div *ngIf="a.value && a.name=='second'">
+        <li *ngFor="let b of arrs2"><input type="checkbox" [(ngModel)]="b.value">{{b.name}}</li>
+      </div></li>
+    
+  </ul>
+    
+        <!--<input type="checkbox" [(ngModel)]="first.value" (click)="check()">1st<br>-->
+    
+      
+      <!--<input name="second_check" value="doosra" type="checkbox" [(ngModel)]="second" (click)="check()">2nd<br>-->
+    
+  <!--<input type="checkbox" [(ngModel)]="click(second)">2nd
+  <div>
+    <input type="checkbox" [(ngModel)]="click(first_div)">1st div
+    <input type="checkbox" [(ngModel)]="clicsecond div">2nd div
+  </div>-->
+</div>
