@@ -2,9 +2,14 @@
   <tr>
     <th *ngFor="let a of head">{{a}}</th>
   </tr>
-  <tr *ngFor="let a of details" (click)="action(a)">
+  <tr *ngFor="let a of details" (click)="action(a)" >
     <td >{{a.name}}</td>
     <td >{{a.email}}</td>
     <td (click)="onEvent($event)" (click)="action(a.age)">{{a.age}}</td>
   </tr>
+  <div id="parent" class="row" style="border: 1px solid black" (click)="parentEvent($event, 'Parent Div Bubbling phase')">
+    <div class="col-6" style="border: 1px solid black">Inner Child 1</div>
+    <div id="child2" class="col-6" style="border: 1px solid black" (click)="parentEvent($event, 'Child Div Bubbling phase')">Inner Child 2</div>
+    
+    </div>
 </table>

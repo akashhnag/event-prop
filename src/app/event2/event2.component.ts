@@ -13,15 +13,47 @@ export class Event2Component implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
+    try{
 
-  action(a){
-    console.log(a);
+      let parent = document.getElementById('parent');
+      let child = document.getElementById('child2');
+      /**
+      * Try to modify the third parameter true/false to check the order of invocation
+      * Explained in this : https://javascript.info/bubbling-and-capturing
+      * true - Event Capturing
+      * false - Event Bubbling
+      * Note: By default click handler in angularjs make use of bubbling phase only. What you have seen is bubbling
+      */
+      parent.addEventListener('click',(event)=>{
+      console.log("Parent invoked");
+      }, true);
+      child.addEventListener('click', ()=>{
+      console.log('Child Invoked');
+      }, true)
+      }catch(ex){
+      
+      }
+    }
     
-  }
+      action1(a){
+      console.log(a);
+      }
+      
+      onEvent(event) {
+      event.stopPropagation();
+      }
+      
+      parentEvent(event, title){
+      console.log(title);
+      }
+    
 
-  onEvent(event) {
-    event.stopPropagation();
+      action(a){
+        console.log(a);
+        
+      }
+
+  
  }
 
-}
+
